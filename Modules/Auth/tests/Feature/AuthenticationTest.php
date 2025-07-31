@@ -1,8 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Livewire\Auth\Login;
 use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+
+uses(Tests\TestCase::class, RefreshDatabase::class);
 
 test('login screen can be rendered', function () {
     $response = $this->get('/login');

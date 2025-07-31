@@ -1,7 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Livewire\Auth\Register;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+
+uses(Tests\TestCase::class, RefreshDatabase::class);
 
 test('registration screen can be rendered', function () {
     $response = $this->get('/register');
