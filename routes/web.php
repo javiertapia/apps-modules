@@ -6,4 +6,5 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-require __DIR__.'/auth.php';
+Route::post('logout', App\Livewire\Actions\Logout::class)
+    ->name('logout');
