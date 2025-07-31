@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Livewire\Settings;
+declare(strict_types=1);
+
+namespace Modules\Dashboard\Livewire\Settings;
 
 use App\Models\User;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
@@ -70,5 +73,10 @@ class Profile extends Component
         $user->sendEmailVerificationNotification();
 
         Session::flash('status', 'verification-link-sent');
+    }
+
+    public function render(): View
+    {
+        return view('dashboard::livewire.settings.profile');
     }
 }

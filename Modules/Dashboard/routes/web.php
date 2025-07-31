@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Settings\Appearance;
-use App\Livewire\Settings\Password;
-use App\Livewire\Settings\Profile;
 use Illuminate\Support\Facades\Route;
+use Modules\Dashboard\Livewire\Settings\Appearance;
+use Modules\Dashboard\Livewire\Settings\Password;
+use Modules\Dashboard\Livewire\Settings\Profile;
 
 Route::middleware(['auth', 'verified'])
     ->prefix('dashboard')
