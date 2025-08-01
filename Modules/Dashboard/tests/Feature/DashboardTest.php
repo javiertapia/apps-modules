@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Auth\Models\User;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 

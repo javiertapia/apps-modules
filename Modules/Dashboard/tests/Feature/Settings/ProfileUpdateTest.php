@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Modules\Dashboard\Livewire\Settings\Profile;
-use App\Models\User;
-use Livewire\Livewire;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Livewire\Livewire;
+use Modules\Auth\Models\User;
+use Modules\Dashboard\Livewire\Settings\Profile;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 
@@ -29,9 +29,9 @@ test('profile information can be updated', function () {
 
     $user->refresh();
 
-    expect($user->name)->toEqual('Test User');
-    expect($user->email)->toEqual('test@example.com');
-    expect($user->email_verified_at)->toBeNull();
+    expect($user->name)->toEqual('Test User')
+        ->and($user->email)->toEqual('test@example.com')
+        ->and($user->email_verified_at)->toBeNull();
 });
 
 test('email verification status is unchanged when email address is unchanged', function () {
@@ -62,8 +62,8 @@ test('user can delete their account', function () {
         ->assertHasNoErrors()
         ->assertRedirect('/');
 
-    expect($user->fresh())->toBeNull();
-    expect(auth()->check())->toBeFalse();
+    expect($user->fresh())->toBeNull()
+        ->and(auth()->check())->toBeFalse();
 });
 
 test('correct password must be provided to delete account', function () {

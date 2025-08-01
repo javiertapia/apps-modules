@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-use Modules\Dashboard\Livewire\Settings\Password;
-use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Livewire;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Modules\Auth\Models\User;
+use Modules\Dashboard\Livewire\Settings\Password;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 
