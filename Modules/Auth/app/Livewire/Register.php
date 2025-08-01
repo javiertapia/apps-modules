@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Livewire\Auth;
+declare(strict_types=1);
+
+namespace Modules\Auth\Livewire;
 
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
@@ -39,5 +42,10 @@ class Register extends Component
         Auth::login($user);
 
         $this->redirect(route('dashboard', absolute: false), navigate: true);
+    }
+
+    public function render(): View
+    {
+        return view('auth::livewire.register');
     }
 }

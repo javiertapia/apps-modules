@@ -2,15 +2,14 @@
 
 declare(strict_types=1);
 
-use App\Http\Controllers\Auth\VerifyEmailController;
-use App\Livewire\Auth\ConfirmPassword;
-use App\Livewire\Auth\ForgotPassword;
-use App\Livewire\Auth\Login;
-use App\Livewire\Auth\Register;
-use App\Livewire\Auth\ResetPassword;
-use App\Livewire\Auth\VerifyEmail;
 use Illuminate\Support\Facades\Route;
-use Modules\Auth\Http\Controllers\AuthController;
+use Modules\Auth\Http\Controllers\VerifyEmailController;
+use Modules\Auth\Livewire\ConfirmPassword;
+use Modules\Auth\Livewire\ForgotPassword;
+use Modules\Auth\Livewire\Login;
+use Modules\Auth\Livewire\Register;
+use Modules\Auth\Livewire\ResetPassword;
+use Modules\Auth\Livewire\VerifyEmail;
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)->name('login');
@@ -29,8 +28,4 @@ Route::middleware('auth')->group(function () {
 
     Route::get('confirm-password', ConfirmPassword::class)
         ->name('password.confirm');
-});
-
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::resource('auths', AuthController::class)->names('auth');
 });

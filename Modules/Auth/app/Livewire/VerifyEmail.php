@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Livewire\Auth;
+declare(strict_types=1);
+
+namespace Modules\Auth\Livewire;
 
 use App\Livewire\Actions\Logout;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Livewire\Attributes\Layout;
@@ -35,5 +38,10 @@ class VerifyEmail extends Component
         $logout();
 
         $this->redirect('/', navigate: true);
+    }
+
+    public function render(): View
+    {
+        return view('auth::livewire.verify-email');
     }
 }

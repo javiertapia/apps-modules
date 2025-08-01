@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Auth\Register;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+use Modules\Auth\Livewire\Register;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 

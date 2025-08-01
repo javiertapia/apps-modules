@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Auth\Login;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Livewire\Livewire;
+use Modules\Auth\Livewire\Login;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 

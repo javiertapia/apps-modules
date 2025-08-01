@@ -1,8 +1,11 @@
 <?php
 
-namespace App\Livewire\Auth;
+declare(strict_types=1);
+
+namespace Modules\Auth\Livewire;
 
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
@@ -31,7 +34,7 @@ class ResetPassword extends Component
     {
         $this->token = $token;
 
-        $this->email = request()->string('email');
+        $this->email = request()->string('email')->toString();
     }
 
     /**
@@ -72,5 +75,10 @@ class ResetPassword extends Component
         Session::flash('status', __($status));
 
         $this->redirectRoute('login', navigate: true);
+    }
+
+    public function render(): View
+    {
+        return view('auth::livewire.reset-password');
     }
 }

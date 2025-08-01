@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-use App\Livewire\Auth\ForgotPassword;
-use App\Livewire\Auth\ResetPassword;
 use App\Models\User;
 use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Notification;
 use Livewire\Livewire;
+use Modules\Auth\Livewire\ForgotPassword;
+use Modules\Auth\Livewire\ResetPassword;
 
 uses(Tests\TestCase::class, RefreshDatabase::class);
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+declare(strict_types=1);
+
+namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
